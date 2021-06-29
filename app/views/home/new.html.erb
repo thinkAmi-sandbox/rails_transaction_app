@@ -1,0 +1,15 @@
+<h1>登録フォーム</h1>
+<%= form_with(url: @post_path, method: :post, local: true) do |f| %>
+  <% if flash[:message].present? %>
+    <div><%= flash[:message] %></div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name, '名称' %>
+    <%= f.text_field :name, autofocus: true %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit '送信' %>
+  </div>
+<% end %>
